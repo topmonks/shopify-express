@@ -22,7 +22,7 @@ module.exports = function configureWithWebhook({ secret, shopStore }) {
         }
         const generatedHash = crypto
           .createHmac('sha256', secret)
-          .update(rawBody)
+          .update(rawBody.body)
           .digest('base64');
 
         let hashEquals = false;
